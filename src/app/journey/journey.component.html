@@ -23,28 +23,28 @@
       <!--LASTNAME-->
       <div class="col-sm-4">
         <label for="lastName">Last Name</label>
-        <input [(ngModel)]="data.firstName"
-               [formControl]="form.controls['firstName']"
+        <input [(ngModel)]="data.lastName"
+               [formControl]="form.controls['lastName']"
                type="text"
                id="lastName"
                class="form-control"
                name="lastName"
                placeholder="Last Name">
         <div class="error-text">
-          <div [hidden]="!(form.controls['lastName'].hasError('required') && form.controls['firstName'].touched)">Required</div>
-          <div [hidden]="!(form.controls['lastName'].hasError('maxlength') && form.controls['firstName'].touched)">Too long</div>
-          <div [hidden]="!(form.controls['lastName'].hasError('pattern') && form.controls['firstName'].touched)">Can only contain letters</div>
+          <div [hidden]="!(form.controls['lastName'].hasError('required') && form.controls['lastName'].touched)">Required</div>
+          <div [hidden]="!(form.controls['lastName'].hasError('maxlength') && form.controls['lastName'].touched)">Too long</div>
+          <div [hidden]="!(form.controls['lastName'].hasError('pattern') && form.controls['lastName'].touched)">Can only contain letters</div>
         </div>
       </div>
 
       <!--PHONE NUMBER-->
       <div class="col-sm-4">
-        <label for="phoneNum">Phone Number</label>
+        <label for="phoneNumber">Phone Number</label>
         <input [(ngModel)]="data.phoneNumber"
                [formControl]="form.controls['phoneNumber']"
                type="text"
                class="form-control"
-               id="phoneNum"
+               id="phoneNumber"
                name="phone"
                placeholder="000-000-0000">
         <div class="error-text">
@@ -52,13 +52,27 @@
           <div [hidden]="!(form.controls['phoneNumber'].hasError('pattern') && form.controls['phoneNumber'].touched)">Invalid format</div>
         </div>
       </div>
-
-
     </div>
 
     <br>
 
-
+    <div class="row">
+      <!--EMAIL-->
+      <div class="col-sm-12">
+        <label for="email">Email</label>
+        <input [(ngModel)]="data.email"
+               [formControl]="form.controls['email']"
+               type="text"
+               class="form-control"
+               id="email"
+               name="phone"
+               placeholder="username@colorado.edu">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['email'].hasError('required') && form.controls['email'].touched)">Required</div>
+          <div [hidden]="!(form.controls['email'].hasError('pattern') && form.controls['email'].touched)">Invalid format</div>
+        </div>
+      </div>
+    </div>
 
     <br>
 
@@ -155,13 +169,13 @@
       <div class="col-sm-4">
 
         <label for="ECLastName">Emergency Contact Last Name</label>
-        <input [(ngModel)]="data.ECFirstName"
-               [formControl]="form.controls['ECFirstName']"
+        <input [(ngModel)]="data.ECLastName"
+               [formControl]="form.controls['ECLastName']"
                type="text"
                id="ECLastName"
                class="form-control"
                name="firstName"
-               placeholder="Emergency Contact Last Name">
+               placeholder="Last Name">
         <div class="error-text">
           <div [hidden]="!(form.controls['ECLastName'].hasError('required') && form.controls['ECLastName'].touched)">Required</div>
           <div [hidden]="!(form.controls['ECLastName'].hasError('maxlength') && form.controls['ECLastName'].touched)">Too long</div>
@@ -173,7 +187,7 @@
       <!--PHONE NUMBER-->
       <div class="col-sm-4">
 
-        <label for="ECPhone">Phone Number</label>
+        <label for="ECPhone">Emergency Contact Phone</label>
         <input [(ngModel)]="data.ECPhone"
                [formControl]="form.controls['ECPhone']"
                type="text"
@@ -192,8 +206,11 @@
 
   </form>
 
-  <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  <br>
 
-
+  <div class="buttons">
+    <button [disabled]="!form.valid" type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+    <button type="button" class="btn btn-danger" (click)="clear()">Clear</button>
+  </div>
 
 </div>

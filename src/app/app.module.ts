@@ -13,6 +13,7 @@ import { EditAccountComponent } from './edit-account/edit-account.component';
 import { ContactComponent } from './contact/contact.component';
 import { JourneyComponent } from './journey/journey.component';
 import { LaborersComponent } from './laborers/laborers.component';
+import { AppService } from './shared/services/app.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { LaborersComponent } from './laborers/laborers.component';
       }
     ])
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
