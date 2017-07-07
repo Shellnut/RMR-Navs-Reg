@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  public loggedIn: boolean;
+
+  constructor(private router: Router) {
+  }
+
+  redirect(path) {
+    this.router.navigate([path]);
+  }
+
+  admin(status: string) {
+    if (status === 'login') {
+      this.router.navigate(['login']);
+    }
+    else if (status === 'logout') {
+      this.loggedIn = false;
+    }
+  }
 }

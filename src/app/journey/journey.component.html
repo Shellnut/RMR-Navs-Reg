@@ -1,0 +1,199 @@
+<div class="container" novalidate="">
+  <h2>Journey 2017 <p class="lead">User Registration</p></h2>
+
+  <form [formGroup]="form">
+
+    <div class="row">
+      <!--FIRSTNAME-->
+      <div class="col-sm-4">
+        <label for="firstName">First Name</label>
+        <input [(ngModel)]="data.firstName"
+               [formControl]="form.controls['firstName']"
+               type="text"
+               id="firstName"
+               class="form-control"
+               name="firstName"
+               placeholder="First Name">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['firstName'].hasError('required') && form.controls['firstName'].touched)">Required</div>
+          <div [hidden]="!(form.controls['firstName'].hasError('maxlength') && form.controls['firstName'].touched)">Too long</div>
+          <div [hidden]="!(form.controls['firstName'].hasError('pattern') && form.controls['firstName'].touched)">Can only contain letters</div>
+        </div>
+      </div>
+      <!--LASTNAME-->
+      <div class="col-sm-4">
+        <label for="lastName">Last Name</label>
+        <input [(ngModel)]="data.firstName"
+               [formControl]="form.controls['firstName']"
+               type="text"
+               id="lastName"
+               class="form-control"
+               name="lastName"
+               placeholder="Last Name">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['lastName'].hasError('required') && form.controls['firstName'].touched)">Required</div>
+          <div [hidden]="!(form.controls['lastName'].hasError('maxlength') && form.controls['firstName'].touched)">Too long</div>
+          <div [hidden]="!(form.controls['lastName'].hasError('pattern') && form.controls['firstName'].touched)">Can only contain letters</div>
+        </div>
+      </div>
+
+      <!--PHONE NUMBER-->
+      <div class="col-sm-4">
+        <label for="phoneNum">Phone Number</label>
+        <input [(ngModel)]="data.phoneNumber"
+               [formControl]="form.controls['phoneNumber']"
+               type="text"
+               class="form-control"
+               id="phoneNum"
+               name="phone"
+               placeholder="000-000-0000">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['phoneNumber'].hasError('required') && form.controls['phoneNumber'].touched)">Required</div>
+          <div [hidden]="!(form.controls['phoneNumber'].hasError('pattern') && form.controls['phoneNumber'].touched)">Invalid format</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <br>
+
+
+
+    <br>
+
+    <div class="row">
+
+      <!--GENDER-->
+      <div class="col-sm-4">
+
+        <label>Gender</label>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.gender" [value]="'male'" type="radio" name="genderRadio">Male
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.gender" [value]="'female'" type="radio" name="genderRadio">Female
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.gender" [value]="'N/A'" type="radio" name="genderRadio">N/A
+          </label>
+        </div>
+
+      </div>
+
+      <!--YEAR-->
+      <div class="col-sm-4">
+
+        <label>Year</label>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.year" [value]="'freshman'" type="radio" name="yearRadio">Freshman
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.year" [value]="'sophmore'" type="radio" name="yearRadio">Sophmore
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.year" [value]="'junior'" type="radio" name="yearRadio">Junior
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.year" [value]="'senior'" type="radio" name="yearRadio">Senior or above
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="data.year" [value]="'staff'" type="radio" name="yearRadio">Staff
+          </label>
+        </div>
+
+      </div>
+
+      <!--SCHOOL-->
+      <div class="col-sm-4">
+
+        <div class="form-group">
+          <label for="college">Select College</label>
+          <select class="form-control" id="college" [(ngModel)]="data.college" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let college of colleges" [value]="college" >{{college}}</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <!--EC FIRSTNAME-->
+      <div class="col-sm-4">
+        <label for="ECfirstName">Emergency Contact First Name</label>
+        <input [(ngModel)]="data.ECFirstName"
+               [formControl]="form.controls['ECFirstName']"
+               type="text"
+               id="ECFirstName"
+               class="form-control"
+               name="firstName"
+               placeholder="First Name">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['ECFirstName'].hasError('required') && form.controls['ECFirstName'].touched)">Required</div>
+          <div [hidden]="!(form.controls['ECFirstName'].hasError('maxlength') && form.controls['ECFirstName'].touched)">Too long</div>
+          <div [hidden]="!(form.controls['ECFirstName'].hasError('pattern') && form.controls['ECFirstName'].touched)">Can only contain letters</div>
+        </div>
+      </div>
+
+      <!--YEAR-->
+      <div class="col-sm-4">
+
+        <label for="ECLastName">Emergency Contact Last Name</label>
+        <input [(ngModel)]="data.ECFirstName"
+               [formControl]="form.controls['ECFirstName']"
+               type="text"
+               id="ECLastName"
+               class="form-control"
+               name="firstName"
+               placeholder="Emergency Contact Last Name">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['ECLastName'].hasError('required') && form.controls['ECLastName'].touched)">Required</div>
+          <div [hidden]="!(form.controls['ECLastName'].hasError('maxlength') && form.controls['ECLastName'].touched)">Too long</div>
+          <div [hidden]="!(form.controls['ECLastName'].hasError('pattern') && form.controls['ECLastName'].touched)">Can only contain letters</div>
+        </div>
+
+      </div>
+
+      <!--PHONE NUMBER-->
+      <div class="col-sm-4">
+
+        <label for="ECPhone">Phone Number</label>
+        <input [(ngModel)]="data.ECPhone"
+               [formControl]="form.controls['ECPhone']"
+               type="text"
+               class="form-control"
+               id="ECPhone"
+               name="phone"
+               placeholder="000-000-0000">
+        <div class="error-text">
+          <div [hidden]="!(form.controls['ECPhone'].hasError('required') && form.controls['ECPhone'].touched)">Required</div>
+          <div [hidden]="!(form.controls['ECPhone'].hasError('pattern') && form.controls['ECPhone'].touched)">Invalid format</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+
+
+
+</div>
