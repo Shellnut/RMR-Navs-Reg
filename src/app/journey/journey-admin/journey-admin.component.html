@@ -1,0 +1,29 @@
+<div class="container table-parent">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">First Name</th>
+        <th class="mdl-data-table__cell--non-numeric">Last Name</th>
+        <th class="mdl-data-table__cell--non-numeric">College</th>
+        <th class="mdl-data-table__cell--non-numeric">Year</th>
+        <th class="mdl-data-table__cell--non-numeric">Phone Number</th>
+        <th class="mdl-data-table__cell--non-numeric">Email</th>
+        <th class="mdl-data-table__cell--non-numeric">Gender</th>
+        <th class="mdl-data-table__cell--non-numeric">Emergency Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let j of journey">
+      <td class="mdl-data-table__cell--non-numeric">{{j.firstName}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.lastName}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.college}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.year}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.phoneNumber}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.email}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.gender}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{j.ECFirstName}} {{j.ECLastName}}: {{j.ECPhone}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

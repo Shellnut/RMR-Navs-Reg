@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h1>Registration Complete</h1>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{data.firstName}}, Your details have been confirmed. You will recieve a confirmation email shortly</h3>
+    </div>
+    <div class="panel-body">
+      <dl>
+        <dt>Name</dt>
+        <dd>{{data.firstName}} {{data.lastName}}</dd>
+      </dl>
+      <dl>
+        <dt>Year</dt>
+        <dd>{{data.year}}</dd>
+      </dl>
+      <dl>
+        <dt>Gender</dt>
+        <dd>{{data.gender}}</dd>
+      </dl>
+      <dl>
+        <dt>Email</dt>
+        <dd>{{data.email}}</dd>
+      </dl>
+      <dl>
+        <dt>Emergency Contact</dt>
+        <dd>{{data.ECFirstName}} {{data.ECLastName}}: {{data.ECPhone}}</dd>
+      </dl>
+    </div>
+  </div>
+
+</div>

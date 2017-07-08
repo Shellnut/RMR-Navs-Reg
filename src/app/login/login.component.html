@@ -1,20 +1,44 @@
-<form name="userForm" novalidate="" class="ng-dirty ng-valid-parse ng-valid ng-valid-required"> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+<form [formGroup]="form" id="login-form" class="small-form">
   <!-- NAME -->
   <div class="form-group">
     <label>Username</label>
-    <input type="text" placeholder="Username" class="form-control ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" ng-model="username" required="">
+    <input type="text" placeholder="Username"
+           class="form-control"
+           [(ngModel)]="username"
+           [ngModelOptions]="{standalone: true}"
+           required="">
+    <div class="error-text">
+      <div *ngIf="form.controls['username'].hasError('required') && form.controls['username'].touched">You must include a username</div>
+    </div>
   </div>
   <!-- PASSWORD -->
   <div class="form-group">
     <label>Password</label>
-    <input type="password" placeholder="Password" class="form-control ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" ng-model="password" required="">
+    <input type="password"
+           placeholder="Password"
+           class="form-control"
+           [(ngModel)]="password"
+           [ngModelOptions]="{standalone: true}"
+           required="">
+    <div class="error-text">
+      <div *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched && !wrongPassword">You must include a password</div>
+      <div *ngIf="warning">{{warning}}</div>
+    </div>
   </div>
   <!-- SUBMIT BUTTON -->
-  <button ng-click="ok()" type="submit" class="btn btn-primary">
+  <button (click)="login()" [disabled]="pending" type="submit" class="btn btn-primary">
     <span>Submit</span>
   </button>
   <!--CANCEL-->
-  <button ng-click="cancel()" type="submit" class="btn btn-danger">
+  <button (click)="cancel()" type="submit" class="btn btn-danger">
     <span>Cancel</span>
   </button>
 </form>
+
+<br>
+
+<div class="well">
+  <label>Need a hand?</label>
+  <p><a (click)="redirect('/create-account')">Create an account</a> or <a>Reset password</a></p>
+</div>
+

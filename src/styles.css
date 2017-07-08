@@ -2,3 +2,7 @@
 div.error-text {
   color: red;
 }
+
+div.buttons button.btn {
+  margin-right: 10px;
+}

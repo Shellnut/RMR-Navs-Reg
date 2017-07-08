@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
+import {AppService} from './shared/services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,19 @@ import { Router} from '@angular/router';
 export class AppComponent {
 
   public loggedIn: boolean;
+  public user: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private appService: AppService) {
+
+    // On Route Change event
+    router.events.subscribe(() => {
+      this.user = this.appService.getUser();
+      if (this.user.firstName) {
+        this.loggedIn = true;
+      }
+    });
+
   }
 
   redirect(path) {
