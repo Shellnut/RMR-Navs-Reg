@@ -11,9 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
 import { ContactComponent } from './contact/contact.component';
-import { JourneyComponent } from './journey/journey.component';
+import { JourneyComponent } from './journey/journey-registration/journey.component';
 import { LaborersComponent } from './laborers/laborers.component';
 import { AppService } from './shared/services/app.service';
+import { JourneyAdminComponent } from './journey/journey-admin/journey-admin.component';
+import { JourneyConfirmComponent } from './journey/journey-confirm/journey-confirm.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { AppService } from './shared/services/app.service';
     ContactComponent,
     JourneyComponent,
     LaborersComponent,
+    JourneyAdminComponent,
+    JourneyConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,14 @@ import { AppService } from './shared/services/app.service';
       {
         path: 'journey',
         component: JourneyComponent
+      },
+      {
+        path: 'journey-admin',
+        component: JourneyAdminComponent
+      },
+      {
+        path: 'journey-confirm',
+        component: JourneyConfirmComponent
       },
       {
         path: 'laborers',

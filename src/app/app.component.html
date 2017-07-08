@@ -13,8 +13,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!loggedIn"><a (click)="admin('login')">Admin</a></li>
-        <li *ngIf="loggedIn"><a (click)="redirect('/contact')">Admin</a></li>
-        <li *ngIf="loggedIn"><a (click)="admin('logout')">Logout</a></li>
+        <li *ngIf="loggedIn"><a (click)="admin('logout')">Hi, {{user.firstName}} Logout</a></li>
       </ul>
     </div>
   </nav>

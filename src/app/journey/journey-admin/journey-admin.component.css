@@ -1,0 +1,12 @@
+div.table-parent {
+  overflow-x: auto;
+}
+
+table {
+  min-width: 100%;
+}
+
+td, th {
+  min-width: 100px;
+  white-space: normal;
+}

@@ -1,29 +1,37 @@
 {
-    "prod": {
-        "api": {
-            "node": {
-                "host": "localhost",
-                "port": 8000,
-                "path": "/api/"
-            }
-        }
-    },
-    "qa": {
-        "api": {
-            "node": {
-                "host": "localhost",
-                "port": 8000,
-                "path": "/api/"
-            }
-        }
-    },
-    "dev": {
-        "api": {
-            "node": {
-                "host": "localhost",
-                "port": 3000,
-                "path": "/api/"
-            }
-        }
-    }
+  "prod": {
+      "api": {
+          "node": {
+              "host": "localhost",
+              "port": 8000,
+              "path": "/api/"
+          }
+      }
+  },
+  "qa": {
+      "api": {
+          "node": {
+              "host": "localhost",
+              "port": 8000,
+              "path": "/api/"
+          }
+      }
+  },
+  "dev": {
+      "api": {
+          "node": {
+              "host": "localhost",
+              "port": 3000,
+              "path": "/api/"
+          }
+      }
+  },
+  "api": {
+    "host": "sql3.freemysqlhosting.net",
+    "database": "sql3184063",
+    "user": "sql3184063",
+    "password": "QqLchuGFm2",
+    "port": "3306"
+  },
+  "secret": "O5H2E3KGXU72Oq34rn7D32j8vQ42c6Y4Rzjb4Q3j3X6UqcPOc3u6HA3n6u2z5Mqe"
 }
